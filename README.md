@@ -3,6 +3,18 @@
 **Agent Token 效率综合 Cursor Skill** — 整合 Ponytail、Caveman、Headroom「三件套」及输入/输出/工作流全链路省 token 策略，在**不牺牲正确性、安全性与可验证性**的前提下降低 API 成本。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![skills.sh](https://img.shields.io/badge/skills.sh-agent--token--efficiency-000000?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTggMEw2IDEwaDR6Ii8+PC9zdmc+)](https://skills.sh/Keep-maker/agent-token-efficiency-skill/agent-token-efficiency)
+
+## skills.sh 安装
+
+本 Skill 已发布到 [skills.sh](https://skills.sh/) 生态，一键安装：
+
+```bash
+npx skills add Keep-maker/agent-token-efficiency-skill --agent cursor -y
+```
+
+- **Skill 页面**：https://skills.sh/Keep-maker/agent-token-efficiency-skill/agent-token-efficiency
+- **搜索**：`npx skills find token-efficiency --owner Keep-maker`
 
 ## 为什么需要这个 Skill？
 

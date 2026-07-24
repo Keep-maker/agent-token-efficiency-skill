@@ -1,0 +1,10 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "Agent Token Efficiency",
+      "description": "Comprehensive token-saving playbook synthesizing Ponytail, Caveman, Headroom, and workflow patterns for Cursor and other agents.",
+      "skills": ["agent-token-efficiency"]
+    }
+  ]
+}
