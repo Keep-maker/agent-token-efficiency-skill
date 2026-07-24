@@ -5,16 +5,41 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![skills.sh](https://img.shields.io/badge/skills.sh-agent--token--efficiency-000000?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTggMEw2IDEwaDR6Ii8+PC9zdmc+)](https://skills.sh/Keep-maker/agent-token-efficiency-skill/agent-token-efficiency)
 
-## skills.sh 安装
+## skills.sh 与 CC Switch 说明
 
-本 Skill 已发布到 [skills.sh](https://skills.sh/) 生态，一键安装：
+> **重要**：CC Switch 的「skills.sh 搜索」走的是 skills.sh **在线索引 API**，不是 GitHub 实时搜索。新仓库需要等待索引同步（或安装量积累），**短期内搜不到是正常的**。
+
+### 方式一：命令行安装（立即可用，推荐）
 
 ```bash
 npx skills add Keep-maker/agent-token-efficiency-skill --agent cursor -y
 ```
 
+### 方式二：CC Switch 添加 GitHub 仓库（立即可用）
+
+skills.sh 搜不到时，用**自定义仓库**绕过索引：
+
+1. 打开 CC Switch → **Skills 管理** → **仓库管理**
+2. 点击 **添加仓库**，填写：
+
+| 字段 | 值 |
+|------|-----|
+| Owner | `Keep-maker` |
+| Name | `agent-token-efficiency-skill` |
+| Branch | `main` |
+| Subdirectory | `skills` |
+
+3. 保存后回到 Skills 列表，从该仓库安装 `agent-token-efficiency`
+
+### 方式三：skills.sh 搜索（需等待索引）
+
+索引同步后可搜索关键词：
+
+- `agent-token-efficiency`（Skill 名，不是仓库名）
+- `token-efficiency`
+
 - **Skill 页面**：https://skills.sh/Keep-maker/agent-token-efficiency-skill/agent-token-efficiency
-- **搜索**：`npx skills find token-efficiency --owner Keep-maker`
+- **索引请求**：https://github.com/vercel-labs/skills/issues/1768
 
 ## 为什么需要这个 Skill？
 
@@ -33,12 +58,12 @@ INPUT（读文件、日志、历史）  →  推理  →  OUTPUT（解释 + 代�
 | 模块 | 文件 | 说明 |
 |------|------|------|
 | 主 Skill | [SKILL.md](SKILL.md) | 诊断流程、决策树、红线、输出模板 |
-| 三件套 | [references/three-pillars.md](references/three-pillars.md) | Ponytail / Caveman / Headroom 分工与叠加 |
-| 输入优化 | [references/input-optimization.md](references/input-optimization.md) | Headroom、@引用、ignore、记忆、MCP、RAG |
-| 输出· prose | [references/output-optimization.md](references/output-optimization.md) | Caveman、Karpathy 原则、格式技巧 |
-| 代码最小化 | [references/code-minimization.md](references/code-minimization.md) | Ponytail 七级梯、安全红线 |
-| 工作流 | [references/workflow-patterns.md](references/workflow-patterns.md) | Skill 架构、记忆、Subagent、TDD |
-| 工具安装 | [references/tools-install.md](references/tools-install.md) | 一键命令与验证 |
+| 三件套 | [skills/agent-token-efficiency/references/three-pillars.md](skills/agent-token-efficiency/references/three-pillars.md) | Ponytail / Caveman / Headroom 分工与叠加 |
+| 输入优化 | [skills/agent-token-efficiency/references/input-optimization.md](skills/agent-token-efficiency/references/input-optimization.md) | Headroom、@引用、ignore、记忆、MCP、RAG |
+| 输出· prose | [skills/agent-token-efficiency/references/output-optimization.md](skills/agent-token-efficiency/references/output-optimization.md) | Caveman、Karpathy 原则、格式技巧 |
+| 代码最小化 | [skills/agent-token-efficiency/references/code-minimization.md](skills/agent-token-efficiency/references/code-minimization.md) | Ponytail 七级梯、安全红线 |
+| 工作流 | [skills/agent-token-efficiency/references/workflow-patterns.md](skills/agent-token-efficiency/references/workflow-patterns.md) | Skill 架构、记忆、Subagent、TDD |
+| 工具安装 | [skills/agent-token-efficiency/references/tools-install.md](skills/agent-token-efficiency/references/tools-install.md) | 一键命令与验证 |
 | 示例 | [examples/before-after.md](examples/before-after.md) | 7 组前后对比 |
 
 ## 三件套速查
@@ -67,7 +92,7 @@ INPUT（读文件、日志、历史）  →  推理  →  OUTPUT（解释 + 代�
 - **TDD / 明确 DoD**：减少写错重写循环
 - **日志 tail / jq 过滤**：只把 ERROR 相关片段送入 context
 
-完整列表见 [references/workflow-patterns.md](references/workflow-patterns.md)。
+完整列表见 [skills/agent-token-efficiency/references/workflow-patterns.md](skills/agent-token-efficiency/references/workflow-patterns.md)。
 
 ## 安装
 
@@ -77,8 +102,9 @@ INPUT（读文件、日志、历史）  →  推理  →  OUTPUT（解释 + 代�
 # 全局
 npx skills add Keep-maker/agent-token-efficiency-skill --agent cursor -g -y
 
-# 或项目级
-git clone https://github.com/Keep-maker/agent-token-efficiency-skill.git .agents/skills/agent-token-efficiency
+# 或项目级（克隆后复制 skills/agent-token-efficiency 子目录）
+git clone https://github.com/Keep-maker/agent-token-efficiency-skill.git
+# 复制 skills/agent-token-efficiency → 项目 .agents/skills/agent-token-efficiency/
 ```
 
 ### 手动
@@ -136,18 +162,15 @@ headroom wrap cursor
 
 ```
 agent-token-efficiency-skill/
-├── SKILL.md
+├── skills/
+│   └── agent-token-efficiency/
+│       ├── SKILL.md
+│       ├── references/
+│       └── examples/
+├── skills.sh.json
 ├── README.md
 ├── LICENSE
-├── references/
-│   ├── three-pillars.md
-│   ├── input-optimization.md
-│   ├── output-optimization.md
-│   ├── code-minimization.md
-│   ├── workflow-patterns.md
-│   └── tools-install.md
-└── examples/
-    └── before-after.md
+└── package.json
 ```
 
 ## 相关资源
