@@ -125,13 +125,22 @@
     .pipe-node.output .tool { color: var(--amber); }
     .pipe-arrow { color: var(--muted); font-size: 1.2rem; }
     .stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-      margin: 4rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 3rem 0 0;
+      width: 100%;
+      align-items: stretch;
     }
     @media (max-width: 640px) { .stats { grid-template-columns: 1fr; } }
     .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 1.5rem; border-radius: 16px; text-align: center;
       background: var(--surface); border: 1px solid var(--border);
+      min-height: 156px;
     }
     .stat .num {
       font-size: 2rem; font-weight: 800; font-family: var(--mono);
@@ -281,25 +290,25 @@
         <div class="label">prose + code</div>
       </div>
     </div>
-  </header>
 
-  <div class="wrap stats">
-    <div class="stat">
-      <div class="num teal">-95%</div>
-      <div class="name">Headroom</div>
-      <div class="desc">输入上下文压缩</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num teal">-95%</div>
+        <div class="name">Headroom</div>
+        <div class="desc">输入上下文压缩</div>
+      </div>
+      <div class="stat">
+        <div class="num amber">-65%</div>
+        <div class="name">Caveman</div>
+        <div class="desc">自然语言输出</div>
+      </div>
+      <div class="stat">
+        <div class="num violet">-54%</div>
+        <div class="name">Ponytail</div>
+        <div class="desc">生成代码 LOC</div>
+      </div>
     </div>
-    <div class="stat">
-      <div class="num amber">-65%</div>
-      <div class="name">Caveman</div>
-      <div class="desc">自然语言输出</div>
-    </div>
-    <div class="stat">
-      <div class="num violet">-54%</div>
-      <div class="name">Ponytail</div>
-      <div class="desc">生成代码 LOC</div>
-    </div>
-  </div>
+  </header>
 
   <section id="pillars">
     <div class="wrap">
