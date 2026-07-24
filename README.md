@@ -24,6 +24,16 @@ git clone https://gitee.com/keep-maker/agent-token-efficiency-skill.git
 
 CC Switch 也可添加 **Gitee 自定义仓库**：Owner `keep-maker`，Name `agent-token-efficiency-skill`，Branch `main`，Subdirectory `skills`。
 
+## 网站（在线演示）
+
+| 平台 | 地址 | 说明 |
+|------|------|------|
+| **GitHub Pages** | https://keep-maker.github.io/agent-token-efficiency-skill/ | 已部署，全球可访问 |
+| **Gitee Pages** | https://keep-maker.gitee.io/agent-token-efficiency-skill/ | 国内更快，需在仓库「服务 → Gitee Pages」启动 |
+| **Cloudflare Pages** | 配置 Token 后自动部署 | 见 [docs/DEPLOY.md](docs/DEPLOY.md) |
+
+站点为纯静态页（`docs/index.html`），已优化：无 Google Fonts 依赖、系统字体、CDN 缓存头。
+
 ## skills.sh 与 CC Switch 说明
 
 > **重要**：CC Switch 的「skills.sh 搜索」走的是 skills.sh **在线索引 API**，不是 GitHub 实时搜索。新仓库需要等待索引同步（或安装量积累），**短期内搜不到是正常的**。
