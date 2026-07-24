@@ -2,7 +2,14 @@
   "name": "agent-token-efficiency-skill",
   "version": "1.0.0",
   "description": "Comprehensive Agent token efficiency Cursor Skill synthesizing Ponytail, Caveman, Headroom and workflow patterns",
-  "repository": "https://github.com/Keep-maker/agent-token-efficiency-skill",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Keep-maker/agent-token-efficiency-skill.git"
+  },
+  "homepage": "https://github.com/Keep-maker/agent-token-efficiency-skill",
+  "bugs": {
+    "url": "https://github.com/Keep-maker/agent-token-efficiency-skill/issues"
+  },
   "license": "MIT",
   "keywords": [
     "cursor",

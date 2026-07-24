@@ -3,7 +3,26 @@
 **Agent Token 效率综合 Cursor Skill** — 整合 Ponytail、Caveman、Headroom「三件套」及输入/输出/工作流全链路省 token 策略，在**不牺牲正确性、安全性与可验证性**的前提下降低 API 成本。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-Keep--maker/agent--token--efficiency--skill-181717?style=flat&logo=github)](https://github.com/Keep-maker/agent-token-efficiency-skill)
+[![Gitee](https://img.shields.io/badge/Gitee-keep--maker/agent--token--efficiency--skill-C71D23?style=flat&logo=gitee)](https://gitee.com/keep-maker/agent-token-efficiency-skill)
 [![skills.sh](https://img.shields.io/badge/skills.sh-agent--token--efficiency-000000?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTggMEw2IDEwaDR6Ii8+PC9zdmc+)](https://skills.sh/Keep-maker/agent-token-efficiency-skill/agent-token-efficiency)
+
+## 镜像仓库
+
+| 平台 | 地址 |
+|------|------|
+| GitHub | https://github.com/Keep-maker/agent-token-efficiency-skill |
+| Gitee | https://gitee.com/keep-maker/agent-token-efficiency-skill |
+
+```bash
+# GitHub
+git clone https://github.com/Keep-maker/agent-token-efficiency-skill.git
+
+# Gitee（国内访问更快）
+git clone https://gitee.com/keep-maker/agent-token-efficiency-skill.git
+```
+
+CC Switch 也可添加 **Gitee 自定义仓库**：Owner `keep-maker`，Name `agent-token-efficiency-skill`，Branch `main`，Subdirectory `skills`。
 
 ## skills.sh 与 CC Switch 说明
 
