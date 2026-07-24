@@ -6,6 +6,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Keep--maker/agent--token--efficiency--skill-181717?style=flat&logo=github)](https://github.com/Keep-maker/agent-token-efficiency-skill)
 [![Gitee](https://img.shields.io/badge/Gitee-keep--maker/agent--token--efficiency--skill-C71D23?style=flat&logo=gitee)](https://gitee.com/keep-maker/agent-token-efficiency-skill)
 [![skills.sh](https://img.shields.io/badge/skills.sh-agent--token--efficiency-000000?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTggMEw2IDEwaDR6Ii8+PC9zdmc+)](https://skills.sh/Keep-maker/agent-token-efficiency-skill/agent-token-efficiency)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-00d4aa?style=flat)](https://keep-maker.github.io/agent-token-efficiency-skill/)
 
 ## 镜像仓库
 
