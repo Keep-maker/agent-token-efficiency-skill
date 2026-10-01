@@ -1,0 +1,2 @@
+# Disable Jekyll static generation: docs/ is a pure static site
+# (legacy source and Pages Actions both honor this file)

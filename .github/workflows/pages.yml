@@ -1,0 +1,85 @@
+# Deploy the static docs/ site to GitHub Pages via the official Pages Actions.
+# Project site: url = https://keep-maker.github.io, baseurl = /agent-token-efficiency-skill.
+# Prerequisite (one-time, manual): enable GitHub Pages in the repo settings
+# (Settings -> Pages -> Build and deployment -> Source = "GitHub Actions").
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+# Allow only one concurrent deployment; skip intermediate ones.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby (Jekyll toolchain)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          cache-version: 0
+          working-directory: docs
+
+      # Build index.html through Jekyll so {{ site.baseurl }}-style liquid
+      # references (if any are added later) render correctly for the sub-path.
+      - name: Build with Jekyll
+        working-directory: docs
+        run: |
+          bundle exec jekyll build --baseurl "/agent-token-efficiency-skill" --url "https://keep-maker.github.io" \
+            --destination "$(pwd)/_site"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Wait for Pages deployment
+        runs-on: ubuntu-latest
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployment = await context.github.rest.pages
+              .getLatestDeployment({ owner: context.repo.owner, repo: context.repo.repo });
+            let attempt = 0;
+            while (
+              deployment.data.status === 'building' &&
+              attempt < 60
+            ) {
+              await new Promise((r) => setTimeout(r, 5000));
+              attempt++;
+              const latest = await context.github.rest.pages
+                .getLatestDeployment({ owner: context.repo.owner, repo: context.repo.repo });
+              deployment.data = latest.data;
+            }
+            if (deployment.data.status !== 'succeeded') {
+              core.setFailed(`Pages deployment did not succeed: ${deployment.data.status}`);
+            }
+            core.setOutput('page_url', deployment.data.page_url || '');

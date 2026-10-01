@@ -1,0 +1,9 @@
+theme: jekyll-theme-timeless
+title: agent-token-efficiency-skill
+description: Agent Token 效率综合 Cursor Skill — 整合 Headroom / Caveman / Ponytail 三件套省 token 策略
+repository: Keep-maker/agent-token-efficiency-skill
+show_downloads: false
+
+# 项目站点（org/user repo 下的站点固定挂载在 /<repo>/ 子路径）
+baseurl: "/agent-token-efficiency-skill"
+url: "https://keep-maker.github.io"

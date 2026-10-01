@@ -1,0 +1,6 @@
+# Jekyll toolchain for the docs/ static site build (used by .github/workflows/pages.yml).
+# The site is pure static HTML; Jekyll only acts as a pass-through renderer so
+# future {{ site.baseurl }} liquid references resolve for the /<repo> sub-path.
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"

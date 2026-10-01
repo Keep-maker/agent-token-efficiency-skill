@@ -29,7 +29,7 @@ CC Switch 也可添加 **Gitee 自定义仓库**：Owner `keep-maker`，Name `ag
 
 | 平台 | 地址 | 说明 |
 |------|------|------|
-| **GitHub Pages** | https://keep-maker.github.io/agent-token-efficiency-skill/ | 已部署，全球可访问 |
+| **GitHub Pages** | https://keep-maker.github.io/agent-token-efficiency-skill/ | 由官方 Pages Actions 自动部署（`.github/workflows/pages.yml`），推 `docs/` 即生效 |
 | **Gitee Pages** | https://keep-maker.gitee.io/agent-token-efficiency-skill/ | 国内更快，需在仓库「服务 → Gitee Pages」启动 |
 | **Cloudflare Pages** | 配置 Token 后自动部署 | 见 [docs/DEPLOY.md](docs/DEPLOY.md) |
 
