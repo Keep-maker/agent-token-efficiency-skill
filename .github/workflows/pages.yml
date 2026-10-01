@@ -32,17 +32,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # No theme in _config.yml -> Jekyll pass-through build.
-      - name: Build with Jekyll
-        working-directory: docs
-        run: |
-          gem install jekyll -N
-          jekyll build --baseurl "/agent-token-efficiency-skill" --url "https://keep-maker.github.io" --destination "$(pwd)/_site"
-
+      # docs/ is a pure static site (index.html + _headers + _config.yml + .nojekyll).
+      # No Jekyll build step needed; .nojekyll prevents Jekyll from generating
+      # a static site from this directory.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/_site
+          path: docs
 
       - name: Deploy to GitHub Pages
         id: deploy
