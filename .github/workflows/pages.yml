@@ -35,7 +35,9 @@ jobs:
       # No theme in _config.yml -> Jekyll pass-through build.
       - name: Build with Jekyll
         working-directory: docs
-        run: jekyll build --baseurl "/agent-token-efficiency-skill" --url "https://keep-maker.github.io" --destination "$(pwd)/_site"
+        run: |
+          gem install jekyll -N
+          jekyll build --baseurl "/agent-token-efficiency-skill" --url "https://keep-maker.github.io" --destination "$(pwd)/_site"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
